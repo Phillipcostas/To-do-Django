@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/png" href="" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'path/to/your/favicon.png' %}" />
 
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
 
@@ -18,20 +18,20 @@
     <header>
       <div class="header-logo-container">
         <a href="/">
-          <img src="" alt="The Cat Collector Logo" />
+          <img src="{% static 'path/to/your/logo.png' %}" alt="The Cat Collector Logo" />
         </a>
       </div>
       <nav>
         <ul>
-          <li><a href="/toDo">To-Do's</a></li>  
-          <li><a href="/about">about</a></li>
-         
+          <li><a href="{% url 'toDo-index' %}">To-Do's</a></li>
+          <li><a href="{% url 'toDo-create' %}">Add a To-Do</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
         </ul>
       </nav>
     </header>
     <main>
-     {% block content %} 
-     {% endblock %}
-     </main>
+      {% block content %} 
+      {% endblock %}
+    </main>
   </body>
 </html>

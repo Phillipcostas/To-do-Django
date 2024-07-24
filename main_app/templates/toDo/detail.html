@@ -11,6 +11,15 @@
   <div class="toDo-details">
     <h1>{{ toDo.name }}</h1>
     <p>{{ toDo.description }}</p>
+    <h1>{{ toDo.completed }}</h1>
+    <label>
+        <input type="checkbox" id="todoCheckbox">
+        Completed
+    </label>
+  </div>
+  <div class="toDo-actions">
+      <a href="{% url 'toDo-update' toDo.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'toDo-delete' toDo.id %}" class="btn danger">Delete</a>
   </div>
 </section>
 {% endblock %}

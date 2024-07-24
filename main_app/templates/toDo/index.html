@@ -1,35 +1,31 @@
 {% extends 'base.html' %} 
 {% load static %} 
+
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/toDo/toDo-index.css' %}"/>
 {% endblock %} 
+
 {% block content %}
 
 <section class="page-header">
   <h1>To-Do Lists</h1>
-
 </section>
 
 <section class="card-container">
   {% for toDo in toDos %}
     <div class="card">
-      <a href="/toDo/{{ toDo.id }}">
-      <div class="card-content">
-        <div class="card-img-container">
-          <img
-            src="{% static '' %}"
-            alt="A skater boy cat"
-          />
+      <a href="{% url 'toDo-detail' toDo.id %}">
+        <div class="card-content">
+          <div class="card-img-container">
+            <img
+              src="{% static 'path/to/your/default/image.jpg' %}"  <!-- Update the src to the actual path of your static image -->
+              alt="{{ toDo.name }}"
+            />
+          </div>
+          <h2 class="card-title">{{ toDo.name }}</h2>
+          <p><small>{{ toDo.description }}</small></p>
         </div>
-        <h2 class="card-title">{{ todo.name }}</h2>
-        {% comment %} {% if cat.age > 0 %} {% endcomment %}
-        {% comment %} <p>A {{ cat.age }} year old {{ cat.breed }}</p> {% endcomment %}
-        {% comment %} {% else %} {% endcomment %}
-        {% comment %} <p>A {{ cat.breed }} kitten.</p> {% endcomment %}
-        {% comment %} {% endif %} {% endcomment %}
-        <p><small>{{ toDo.description }}</small></p>
-      </div>
-    </a>
+      </a>
     </div>
   {% endfor %}
 </section>
