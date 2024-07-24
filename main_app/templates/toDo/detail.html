@@ -1,0 +1,16 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/toDo/toDo-detail.css' %}" />
+{% endblock %} 
+{% block content %}
+<section class="toDo-container">
+  <div class="toDo-img">
+    <img src="{% static '' %}" alt="A skater boy cat" />
+  </div>
+  <div class="toDo-details">
+    <h1>{{ toDo.name }}</h1>
+    <p>{{ toDo.description }}</p>
+  </div>
+</section>
+{% endblock %}

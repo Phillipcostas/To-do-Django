@@ -13,6 +13,7 @@
 <section class="card-container">
   {% for toDo in toDos %}
     <div class="card">
+      <a href="/toDo/{{ toDo.id }}">
       <div class="card-content">
         <div class="card-img-container">
           <img
@@ -28,6 +29,7 @@
         {% comment %} {% endif %} {% endcomment %}
         <p><small>{{ toDo.description }}</small></p>
       </div>
+    </a>
     </div>
   {% endfor %}
 </section>

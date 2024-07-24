@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import Todo 
+
 
 def home(request):
     return render(request, 'home.html')
@@ -7,17 +9,12 @@ def about(request):
     return render(request, 'about.html')
 
 def toDo_index(request):
-    return render(request, 'toDo/index.html', {'toDo': toDo})
+    toDos = Todo.objects.all()
+    return render(request, 'toDo/index.html', {'toDos': toDos})
 
 
-class Todo:
-    def __init__(self, name, description):
-        self.name = name 
-        self.description = description
+def toDo_detail(request, toDo_id):
+    toDo = Todo.objects.get(id=toDo_id)
+    return render(request, 'toDo/detail.html', {'toDo': toDo})
 
-toDo = [
-    Todo('take out trash', 'take the trash out'),
-    Todo('clean the fridge', 'clean the fridge'),
-    Todo('take out trash', 'take the trash out'),
-    Todo('take out trash', 'take the trash out'),
-]
+
