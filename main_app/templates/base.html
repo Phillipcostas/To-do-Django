@@ -2,36 +2,32 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/png" href="{% static 'path/to/your/favicon.png' %}" />
-
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
-
     <title>To-do</title>
     {% block head %} 
     {% endblock %}
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <div class="header-logo-container">
-        <a href="/">
-          <img src="{% static 'path/to/your/logo.png' %}" alt="The Cat Collector Logo" />
-        </a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="{% url 'toDo-index' %}">To-Do's</a></li>
-          <li><a href="{% url 'toDo-create' %}">Add a To-Do</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
-        </ul>
-      </nav>
+        <div class="header-logo-container">
+            <!-- Logo goes here -->
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{% url 'toDo-index' %}">To-Do's</a></li>
+                <li><a href="{% url 'toDo-create' %}">Add a To-Do</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-      {% block content %} 
-      {% endblock %}
+        {% block content %} 
+        {% endblock %}
     </main>
-  </body>
+</body>
 </html>

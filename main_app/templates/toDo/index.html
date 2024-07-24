@@ -1,12 +1,9 @@
-{% extends 'base.html' %} 
-{% load static %} 
-
+{% extends 'base.html' %}
+{% load static %}
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/toDo/toDo-index.css' %}"/>
-{% endblock %} 
-
+<link rel="stylesheet" href="{% static 'css/toDo/toDo-index.css' %}" />
+{% endblock %}
 {% block content %}
-
 <section class="page-header">
   <h1>To-Do Lists</h1>
 </section>
@@ -17,17 +14,21 @@
       <a href="{% url 'toDo-detail' toDo.id %}">
         <div class="card-content">
           <div class="card-img-container">
-            <img
-              src="{% static 'path/to/your/default/image.jpg' %}"  <!-- Update the src to the actual path of your static image -->
-              alt="{{ toDo.name }}"
-            />
+            <img src="{% static '' %}" alt="A skater boy cat" />
           </div>
           <h2 class="card-title">{{ toDo.name }}</h2>
           <p><small>{{ toDo.description }}</small></p>
+          <h3>Sub-Tasks</h3>
+          <ul>
+            {% for subtask in toDo.subtasks.all %}
+              <li>
+                <input type="checkbox" {% if subtask.completed %}checked{% endif %}> {{ subtask.name }}
+              </li>
+            {% endfor %}
+          </ul>
         </div>
       </a>
     </div>
   {% endfor %}
 </section>
-
 {% endblock %}

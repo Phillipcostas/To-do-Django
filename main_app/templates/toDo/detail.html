@@ -1,8 +1,8 @@
-{% extends 'base.html' %} 
-{% load static %} 
+{% extends 'base.html' %}
+{% load static %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/toDo/toDo-detail.css' %}" />
-{% endblock %} 
+{% endblock %}
 {% block content %}
 <section class="toDo-container">
   <div class="toDo-img">
@@ -13,13 +13,24 @@
     <p>{{ toDo.description }}</p>
     <h1>{{ toDo.completed }}</h1>
     <label>
-        <input type="checkbox" id="todoCheckbox">
-        Completed
+      <input type="checkbox" id="todoCheckbox" {% if toDo.completed %}checked{% endif %}>
+      Completed
     </label>
   </div>
   <div class="toDo-actions">
-      <a href="{% url 'toDo-update' toDo.id %}" class="btn warn">Edit</a>
-      <a href="{% url 'toDo-delete' toDo.id %}" class="btn danger">Delete</a>
+    <a href="{% url 'toDo-update' toDo.id %}" class="btn warn">Edit</a>
+    <a href="{% url 'toDo-delete' toDo.id %}" class="btn danger">Delete</a>
   </div>
+</section>
+
+<section class="subtasks-container">
+  <h2>Sub-Tasks</h2>
+  <ul>
+    {% for subtask in subtasks %}
+      <li>
+        <input type="checkbox" {% if subtask.completed %}checked{% endif %}> {{ subtask.name }}
+      </li>
+    {% endfor %}
+  </ul>
 </section>
 {% endblock %}

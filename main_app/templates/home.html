@@ -5,12 +5,9 @@
 {% endblock %}
 {% block content %}
 
-<section class="logo-container">
-  <div class="cat-container">
-    <img src="{% static '' %}" alt="The Cat Collector Cat" />
-  </div>
-  <img src="{% static '' %}" alt="Text reads: Cat Collector" />
-</section>
-<a href="{% url 'toDo-index' %}">View To-Do List</a>
+
+<div class="sticky-note">
+  <p><a href="{% url 'toDo-index' %}">View To-Do List</a></p>
+</div>
 
 {% endblock %}
