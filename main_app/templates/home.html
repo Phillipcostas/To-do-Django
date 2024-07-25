@@ -4,7 +4,17 @@
 <link rel="stylesheet" href="{% static 'css/home.css' %}" />
 {% endblock %}
 {% block content %}
+{% if not user.is_authenticated %}
 
+<section>
+  <form action="{% url 'home' %}" method="post" class="login">
+    <h1>Login</h1>
+    {% csrf_token %} {{ form.as_p }}
+    <input type="hidden" name="next" value="{{ next }}" />
+    <button type="submit" class="btn submit">Login</button>
+  </form>
+</section>
+{% endif %}
 
 <div class="sticky-note">
   <p><a href="{% url 'toDo-index' %}">View To-Do List</a></p>

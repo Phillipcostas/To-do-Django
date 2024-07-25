@@ -1,40 +1,55 @@
+
+.page-header h1 {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .form-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  table {
-    padding: 0 40px;
-    width: 100%;
-    border-spacing: 0 20px;
-  }
-  
-  th {
-    text-align: left;
-    padding: 6px 20px 0 0;
-    font-weight: normal;
-    vertical-align: top;
-    font-size: var(--font-reg);
-  }
-  
-  td {
-    max-width: 60%;
-  }
-  
-  td > * {
-    width: 100%;
-    padding: 2px 4px;
-    font-size: var(--font-l);
-  }
-  
-  td > textarea {
-    height: calc(4 * var(--font-l) + 8px);
-    font-family: inherit;
-  }
-  
-  .btn {
-    align-self: flex-end;
-    margin-right: 40px;
-  }
-  
+  background-color: #ffeb3b; 
+  border: 2px solid #d4d4d4; 
+  box-shadow: var(--card-box-shadow); 
+  padding: 10px;
+  font-family: 'Comic Sans MS', 'Comic Sans', 'cursive'; 
+  margin: 20px auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+.form-container table {
+  width: 100%;}
+
+.form-container th {
+  text-align: left;
+  font-size: var(--font-l);
+  padding-bottom: 10px;
+}
+
+.form-container td {
+  padding: 5px 0;
+}
+
+.btn.submit {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #f1e896; 
+  border: 2px solid #d4d4d4; 
+  box-shadow: var(--card-box-shadow); 
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive; 
+  color: #333; 
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn.submit:hover {
+  transform: rotate(-7deg);
+}
+
+h2 {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}

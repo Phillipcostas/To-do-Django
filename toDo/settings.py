@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'toDo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'toDo',
+        'NAME': 'todo',
     }
 }
 
@@ -117,6 +117,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+LOGIN_URL = 'home'
+LOGIN_REDIRECT_URL = 'toDo-index'
+LOGOUT_REDIRECT_URL = 'home'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

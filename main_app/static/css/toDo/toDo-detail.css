@@ -12,13 +12,6 @@ li:has(input:checked) {
 }
 
 
-.toDo-img {
-  width: 55%;
-  max-width: 350px;
-  border-radius: var(--card-border-radius);
-  box-shadow: var(--card-box-shadow);
-}
-
 .usr-img {
   width: 100%;
   border-radius: var(--card-border-radius);
@@ -29,9 +22,10 @@ li:has(input:checked) {
   padding: 20px;
   border: 2px solid #d4d4d4;
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-  box-shadow: var(--card-box-shadow); /* Apply box shadow for sticky note effect */
-  margin-bottom: 20px; /* Spacing between sticky notes */
-}
+  box-shadow: var(--card-box-shadow); 
+  margin-bottom: 20px; 
+  max-width: 800px;
+} 
 
 .toDo-actions {
   margin-top: 20px;
@@ -115,9 +109,9 @@ li:has(input:checked) {
   .toDo-container {
     padding: 35px 30px;
     flex-direction: row;
-    align-items: flex-start; /* Align items to top for better layout */
+    align-items: flex-start; 
     justify-content: flex-start;
-    flex-wrap: wrap; /* Allows multiple sticky notes to wrap */
+    flex-wrap: wrap;
   }
 
   .toDo-img {
@@ -127,9 +121,9 @@ li:has(input:checked) {
   }
 
   .toDo-details {
-    width: auto; /* Allows the width to adjust based on content */
-    margin-right: 20px; /* Spacing between sticky notes */
-    flex: 1; /* Allows flexibility for each sticky note */
+    width: auto; 
+    margin-right: 20px; 
+    flex: 1; 
   }
 }
 
@@ -147,7 +141,7 @@ li:has(input:checked) {
 }
 
 .toDo-actions .btn:hover {
-  transform: rotate(-7deg); 
+  transform: rotate(-10deg); 
 }
 
 .toDo-actions .btn.warn {

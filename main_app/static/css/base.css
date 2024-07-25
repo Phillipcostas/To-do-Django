@@ -1,46 +1,47 @@
+/* static/css/base.css */
 
 header {
-  margin-bottom: 20px;
   display: flex;
-  justify-content: flex-end; 
-  align-items: center; 
+  justify-content: space-between;
+  align-items: center;
 }
 
-.navbar {
-  background-color: #ffeb3b;
-  padding: 13px;
-  border: 2px solid #d4d4d4;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: rotate(-3deg);
+header nav {
   display: flex;
-  justify-content: center;
-  margin: 1 auto;
-  width: fit-content;
-  position: relative;
+  flex-direction: row;
+  margin: 10px; 
+  align-items: flex-end;
 }
 
-.navbar ul {
+header nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
+  flex-direction: row; 
+  align-items: flex-end; 
 }
 
-.navbar li {
-  margin: 0 10px;
+header nav ul li {
+  margin: 10px 10px; 
 }
 
-.navbar a {
+header nav ul li a,
+header nav ul li button {
+  display: block;
+  padding: 10px 15px;
+  background-color: #ffeb3b; 
+  border: 2px solid #d4d4d4; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
   text-decoration: none;
-  color: #000;
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-  font-size: 1em;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive; 
+  color: #333; 
+  transition: transform 0.2s;
+  cursor: pointer; 
+  text-align: right; 
 }
 
-.navbar a:hover {
-  text-decoration: underline;
-}
-
-.header-logo-container img {
-  max-width: 100px; 
+header nav ul li a:hover,
+header nav ul li button:hover {
+  transform: rotate(-18deg);
 }
