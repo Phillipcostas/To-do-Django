@@ -3,6 +3,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Todo, SubTask 
 from .forms import TodoForm, SubTaskFormSet
 from django.forms import modelformset_factory
+from django.urls import reverse
 
 
 
@@ -50,7 +51,10 @@ class TodoUpdate(UpdateView):
     model = Todo
     form_class = TodoForm
     template_name = 'todo_form.html' 
-    success_url = '/toDo'
+    def get_success_url(self):
+        pk = self.kwargs['pk']
+        return reverse('toDo-update', kwargs = {'pk': pk})
+        
 
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)

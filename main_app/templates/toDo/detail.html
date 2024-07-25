@@ -5,32 +5,21 @@
 {% endblock %}
 {% block content %}
 <section class="toDo-container">
-  <div class="toDo-img">
-    <img src="{% static '' %}" alt="A skater boy cat" />
-  </div>
   <div class="toDo-details">
     <h1>{{ toDo.name }}</h1>
     <p>{{ toDo.description }}</p>
     <h1>{{ toDo.completed }}</h1>
-    <label>
-      <input type="checkbox" id="todoCheckbox" {% if toDo.completed %}checked{% endif %}>
-      Completed
-    </label>
+    <ul>
+      {% for subtask in toDo.subtasks.all %}
+        <li>
+          <input type="checkbox" {% if subtask.completed %}checked{% endif %}> {{ subtask.task }}
+        </li>
+      {% endfor %}
+    </ul>
   </div>
   <div class="toDo-actions">
     <a href="{% url 'toDo-update' toDo.id %}" class="btn warn">Edit</a>
     <a href="{% url 'toDo-delete' toDo.id %}" class="btn danger">Delete</a>
   </div>
-</section>
-
-<section class="subtasks-container">
-  <h2>Sub-Tasks</h2>
-  <ul>
-    {% for subtask in subtasks %}
-      <li>
-        <input type="checkbox" {% if subtask.completed %}checked{% endif %}> {{ subtask.name }}
-      </li>
-    {% endfor %}
-  </ul>
 </section>
 {% endblock %}

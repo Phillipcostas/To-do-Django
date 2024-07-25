@@ -2,8 +2,8 @@
 header {
   margin-bottom: 20px;
   display: flex;
-  justify-content: flex-end; /* Align items to the right */
-  align-items: center; /* Center vertically if you have multiple items in the header */
+  justify-content: flex-end; 
+  align-items: center; 
 }
 
 .navbar {
@@ -41,7 +41,6 @@ header {
   text-decoration: underline;
 }
 
-/* Optional: Style the header logo container if needed */
 .header-logo-container img {
-  max-width: 100px; /* Adjust the size as needed */
+  max-width: 100px; 
 }

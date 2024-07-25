@@ -13,16 +13,11 @@
     <div class="card">
       <a href="{% url 'toDo-detail' toDo.id %}">
         <div class="card-content">
-          <div class="card-img-container">
-            <img src="{% static '' %}" alt="A skater boy cat" />
-          </div>
-          <h2 class="card-title">{{ toDo.name }}</h2>
-          <p><small>{{ toDo.description }}</small></p>
-          <h3>Sub-Tasks</h3>
+          <h1 class="card-title">{{ toDo.name }}</h1>
           <ul>
             {% for subtask in toDo.subtasks.all %}
               <li>
-                <input type="checkbox" {% if subtask.completed %}checked{% endif %}> {{ subtask.name }}
+                <input type="checkbox" {% if subtask.completed %}checked{% endif %}> {{ subtask.task }}
               </li>
             {% endfor %}
           </ul>

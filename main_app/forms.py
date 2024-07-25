@@ -6,7 +6,7 @@ from django.forms.models import inlineformset_factory
 class SubTaskForm(forms.ModelForm):
     class Meta:
         model = SubTask
-        fields = ['name', 'completed']
+        fields = ['task', 'completed']
 
 class TodoForm(forms.ModelForm):
     class Meta:

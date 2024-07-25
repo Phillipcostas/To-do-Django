@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .card {
@@ -15,7 +16,12 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   transform: rotate(-5deg); 
   position: relative; 
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive; 
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;  
+}
+
+
+li:has(input:checked) {
+  text-decoration: line-through 3px red;
 }
 
 .card-content {
