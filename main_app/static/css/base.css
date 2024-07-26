@@ -1,5 +1,15 @@
 /* static/css/base.css */
 
+header .header-title {
+  flex: 1; 
+  text-align: center;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive; 
+  font-size: 2.5rem;
+  text-shadow: 2px 2px #ffeb3b, 4px 4px #ffeb3b8f; 
+  margin: 0; 
+  padding: 10px 0; 
+}
+
 header {
   display: flex;
   justify-content: space-between;

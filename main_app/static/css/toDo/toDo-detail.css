@@ -25,6 +25,8 @@ li:has(input:checked) {
   box-shadow: var(--card-box-shadow); 
   margin-bottom: 20px; 
   max-width: 800px;
+  width: 100%; 
+
 } 
 
 .toDo-actions {

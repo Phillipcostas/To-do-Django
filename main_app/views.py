@@ -23,10 +23,16 @@ def toDo_index(request):
     return render(request, 'toDo/index.html', {'toDos': toDos})
 
 @login_required
-def toDo_detail(request, toDo_id):
+def toDo_detail(request,pk, toDo_id):
     toDo = Todo.objects.get(id=toDo_id)
-    subtasks = SubTask.objects.filter(todo=toDo)
-    return render(request, 'toDo/detail.html', {'toDo': toDo})
+    if request.method == 'POST':
+        toDo = Todo.objects.filter(user=request.user)
+        for subtask in toDo.subtasks.all():
+            subtask.completed = f'subtask_{subtask.id}' in request.POST
+            subtask.save()
+        return redirect(reverse('toDo-detail', args=[pk]))
+
+    # return render(request, 'toDo/detail.html', {'toDo': toDo})
 
 def signup(request):
     error_message = ''
