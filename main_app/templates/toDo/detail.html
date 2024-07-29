@@ -6,19 +6,20 @@
 {% block content %}
 <section class="toDo-container">
   <div class="toDo-details">
-    <h1>{{ toDo.name }}</h1>
-    <p>{{ toDo.description }}</p>
-    <h1>{{ toDo.completed }}</h1>
-    <ul>
-      {% for subtask in toDo.subtasks.all %}
-        <li>
-          <input type="checkbox" {% if subtask.completed %}checked{% endif %}> {{ subtask.task }}
-        </li>
-      {% endfor %}
-    </ul>
-  </table>
-  <button type="submit" class="btn submit">Submit Changes!</button>
-</form>
+    <form action="{% url 'toDo-detail' toDo.id %}" method="post">
+      {% csrf_token %}
+      <h1>{{ toDo.name }}</h1>
+      <p>{{ toDo.description }}</p>
+      <h1>{{ toDo.completed }}</h1>
+      <ul>
+        {% for subtask in toDo.subtasks.all %}
+          <li>
+            <input type="checkbox" name="subtask_{{ subtask.id }}" {% if subtask.completed %}checked{% endif %}> {{ subtask.task }}
+          </li>
+        {% endfor %}
+      </ul>
+      <button type="submit" class="btn submit">Submit Changes!</button>
+    </form>
   </div>
   <div class="toDo-actions">
     <a href="{% url 'toDo-update' toDo.id %}" class="btn warn">Edit</a>

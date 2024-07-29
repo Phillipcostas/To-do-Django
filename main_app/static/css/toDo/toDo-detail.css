@@ -36,13 +36,16 @@ li:has(input:checked) {
 .subsection-title {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 5px;
 }
 
 .subsection-content {
-  margin: 0 8px;
+  margin: 210 8px;
 }
 
+#subtask { 
+  width: 100%;
+}
 .color-block {
   opacity: 0.8;
   height: 25px;
